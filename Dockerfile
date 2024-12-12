@@ -10,6 +10,10 @@ RUN rm -rf ./*
 
 COPY . .
 
+RUN mkdir -p /var/cache/nginx /var/run/nginx && \
+    chown -R nginxuser:nginxuser /var/cache/nginx /var/run/nginx /usr/share/nginx/html
+
+
 RUN useradd -m nginxuser
 USER nginxuser
 
