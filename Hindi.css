@@ -6,41 +6,33 @@
   box-sizing: border-box;
   font-family: 'poppins', sans-serif;
 }
+
 body {
   display: grid;
   place-items: center;
   min-height: 100vh;
   background-color: black;
-  /* border: 9px solid red; */
   background-image: url('backhindi.gif');
-
   background-repeat: no-repeat;
   position: relative;
   width: 100%;
-  height: 610px;
-  margin-left: auto;
-  margin-right: auto;
+  height: 100%;
   background-size: cover;
-}
-
-.Respo {
-  max-width: 100%;
-  height: auto;
 }
 
 .main {
   position: relative;
   overflow: hidden;
   height: 90vh;
-  width: 30%;
+  width: 90%;
+  max-width: 600px;
   display: flex;
-  right: 25rem;
   align-items: center;
   flex-direction: column;
   border-radius: 20px;
   background: linear-gradient(to bottom right, orange, black);
   box-shadow: 0.1px 4px 8px 4px rgba(0, 0, 0, 0.5);
-  /* text-align: center; */
+  padding: 1rem;
 }
 
 /*top_section*/
@@ -51,13 +43,11 @@ body {
 .top_section h5 {
   color: #fff;
   font-size: 1.5em;
-  /* font-family: 'Charmonman', cursive; */
 }
-
 
 /*tracks part*/
 .tracks {
-  width: 90%;
+  width: 100%;
   max-height: 75vh;
   overflow-y: scroll;
   padding: 10px 0;
@@ -135,11 +125,9 @@ body {
   object-fit: cover;
 }
 
-
-
 /*controlls part*/
 .controlls {
-  width: 75%;
+  width: 100%;
   margin-top: 2.5em;
 }
 
@@ -209,7 +197,6 @@ body {
   color: #fff;
 }
 
-
 /*range slider*/
 #slider {
   -webkit-appearance: none;
@@ -233,7 +220,6 @@ input[type=range]::-webkit-slider-thumb {
     0.1px 8px 8px 2px rgba(0, 0, 0, 0.2);
 }
 
-
 /*popup_music_player part*/
 .main .popup_music_player {
   position: absolute;
@@ -253,7 +239,6 @@ input[type=range]::-webkit-slider-thumb {
   box-shadow: 0.1px 4px 8px 4px rgba(0, 0, 0, 0.5);
   background: linear-gradient(to bottom right,orange,black);
   box-shadow: 0.1px 4px 8px 4px rgba(0, 0, 0, 0.5);
-
 }
 
 /*top*/
@@ -315,7 +300,6 @@ input[type=range]::-webkit-slider-thumb {
 
 .song_description p {
   color: orangered;
-  /* font-weight: bold; */
   margin-top: 5px;
 }
 
@@ -329,7 +313,6 @@ input[type=range]::-webkit-slider-thumb {
   display: flex;
   align-items: center;
   border-radius: 20px 20px 0 0;
-  /* background: orange; */
   background: linear-gradient(to bottom right, orange, black);
   transition: 0.4s;
   transform: translateY(80px);
@@ -378,7 +361,6 @@ input[type=range]::-webkit-slider-thumb {
 #artist_name {
   font-size: 0.8em;
   margin-top: 5px;
-  /* color: rgba(255, 255, 255, 0.5); */
   color: black;
   font-weight: bold;
 }
@@ -400,7 +382,6 @@ input[type=range]::-webkit-slider-thumb {
   border-radius: 15px;
   background: rgba(255, 255, 255, 0.4);
   animation: animate 0.5s linear alternate infinite;
-
 }
 
 .wave_animation li:nth-child(2) {
@@ -426,5 +407,72 @@ input[type=range]::-webkit-slider-thumb {
 
   100% {
     height: 20px;
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (max-width: 768px) {
+  .main {
+    width: 90%;
+    max-width: 100%;
+  }
+
+  .top_section h5 {
+    font-size: 1.2em;
+  }
+
+  .tracks .song .song_info p:nth-child(2) {
+    font-size: 0.7em;
+  }
+
+  .controlls_btns button {
+    height: 40px;
+    width: 40px;
+  }
+
+  .popup_music_player .song_img {
+    height: 150px;
+    width: 150px;
+  }
+
+  .song_description h3 {
+    font-size: 1em;
+  }
+
+  #slider {
+    width: 75%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .top_section h5 {
+    font-size: 1em;
+  }
+
+  .main {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .tracks .song .song_info p:nth-child(2) {
+    font-size: 0.6em;
+  }
+
+  .controlls_btns button {
+    height: 35px;
+    width: 35px;
+  }
+
+  .popup_music_player .song_img {
+    height: 120px;
+    width: 120px;
+  }
+
+  .song_description h3 {
+    font-size: 0.9em;
+  }
+
+  #slider {
+    width: 60%;
   }
 }
