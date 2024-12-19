@@ -1,51 +1,86 @@
+/* Reset and General Styles */
 * {
     margin: 0;
-    padding: 9px;
+    padding: 0;
+    box-sizing: border-box;
     list-style: none;
 }
 
 .NavBar {
-    /* background-color: black; */
-    /* box-shadow: 0 2px 2px -2px rgba(0,0,0,.2); */
     text-shadow: 5px 5px 9px black;
     color: black;
     text-align: center;
-    background: linear-gradient(to bottom right,#42506B,#EF4B4C,#3E619B,#E9E9EB);
-    /* background: linear-gradient(to bottom right, RED, GREY,black ) */
+    background: linear-gradient(to bottom right, #42506B, #EF4B4C, #3E619B, #E9E9EB);
 }
 
 body {
-
     display: grid;
     place-items: center;
     min-height: 100vh;
     background-image: url('ikermusic.gif');
     background-size: cover;
     background-repeat: no-repeat;
-    position: relative;
     width: 100%;
-    height: 500px;
-    margin-left: auto;
-    margin-right: auto;
-    position: absolute;
-    left: 31px;
-    bottom: 50px;
-    top: 10px;
+    margin: 0 auto;
+    position: relative;
 }
 
+/* Image class for list-style reset */
 image {
     list-style: none;
 }
 
+/* Container responsiveness */
 .f1 {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
-    height: 156px;
-    box-sizing: 100px;
+    height: auto; /* Ensures content adjusts dynamically */
+    max-width: 100%; /* Makes the container adapt to the screen */
 }
 
+/* Responsive styles for tablets and larger devices */
 @media screen and (min-width: 800px) {
+    body {
+        position: relative;
+        height: auto;
+    }
+
     .container {
         margin: 1em 2em;
+        max-width: 80%; /* Restricts content width on larger screens */
+    }
+
+    .NavBar {
+        font-size: 1.5rem; /* Adjust font size for larger screens */
+        padding: 1rem 0;
+    }
+}
+
+/* Mobile adjustments */
+@media screen and (max-width: 480px) {
+    body {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 10px;
+    }
+
+    .NavBar {
+        font-size: 1.2rem; /* Slightly smaller font size for mobile */
+    }
+
+    .f1 {
+        height: auto; /* Adjusts height dynamically */
+        padding: 0.5rem 1rem; /* Adds padding for readability */
+    }
+}
+
+/* Additional adjustments for smaller mobile screens */
+@media screen and (max-width: 360px) {
+    .NavBar {
+        font-size: 1rem;
+    }
+
+    .container {
+        padding: 1em;
     }
 }
