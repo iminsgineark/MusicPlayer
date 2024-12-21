@@ -10,12 +10,15 @@ RUN rm -rf ./*
 
 COPY . .
 
-RUN mkdir -p /var/cache/nginx /var/run/nginx && \
-    chown -R nginxuser:nginxuser /var/cache/nginx /var/run/nginx /usr/share/nginx/html
+# RUN groupadd -g 10001 nginx-user && \
+#     useradd -u 10000 -g nginx-user -M -s /sbin/nologin nginx-user && \
+#     mkdir -p /var/cache/nginx /var/run/nginx /tmp && \
+#     chown -R nginx-user:nginx-user /usr/share/nginx/html /var/cache/nginx /var/run/nginx /tmp && \
+#     chmod -R 777 /etc/nginx/conf.d
 
+# RUN sed -i 's/listen\s*80;/listen 8080;/' /etc/nginx/conf.d/default.conf
 
-RUN useradd -m nginxuser
-USER nginxuser
+# USER nginx-user
 
 EXPOSE 80
 
