@@ -1,26 +1,22 @@
-FROM nginx
+FROM bitnami/nginx:latest
 
 LABEL maintainer="ankurjha4025@gmail.com"
 LABEL version="1.0"
 LABEL description="A lightweight container for serving static content with NGINX"
 
-WORKDIR /usr/share/nginx/html
+USER root
 
-RUN rm -rf ./*
+WORKDIR /app
 
-COPY . .
+COPY ./nginx.conf /etc/nginx/nginx.conf
+COPY ./html /usr/share/nginx/html
 
-# RUN groupadd -g 10001 nginx-user && \
-#     useradd -u 10000 -g nginx-user -M -s /sbin/nologin nginx-user && \
-#     mkdir -p /var/cache/nginx /var/run/nginx /tmp && \
-#     chown -R nginx-user:nginx-user /usr/share/nginx/html /var/cache/nginx /var/run/nginx /tmp && \
-#     chmod -R 777 /etc/nginx/conf.d
+RUN chmod -R 775 /app & \
+    chown -R 1001:0 /app
 
-# RUN sed -i 's/listen\s*80;/listen 8080;/' /etc/nginx/conf.d/default.conf
+EXPOSE 8080
 
-# USER nginx-user
-
-EXPOSE 80
+USER 1001
 
 CMD ["nginx", "-g", "daemon off;"]
 
