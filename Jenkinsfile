@@ -28,8 +28,8 @@ pipeline {
                 echo 'Running tests on Docker container...'
                 script {
                     sh "docker run --rm -d -p 8080:8080 --name test-nginx ${IMAGE_NAME}:${TAG}"
-                    sh "sleep 5"  // Wait for the container to start
-                    sh "curl -f http://localhost:8080 || exit 1" // Ensure the server responds
+                    sh "sleep 5"  
+                    sh "curl -f http://localhost:8080 || exit 1" 
                     sh "docker stop test-nginx"
                 }
             }
