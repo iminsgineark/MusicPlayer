@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Playlists - Iker Music</title>
+  <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+  <style>
+    body {
+      background: url('MusicPlayer/ikermusic.gif') no-repeat center center fixed;
+      background-size: cover;
+      font-family: 'Arial', sans-serif;
+      color: #fff;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 15px;
+      background: linear-gradient(to right, #ff7e5f, #feb47b);
+      border-bottom: 3px solid #fff;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 20px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      font-size: 1.4rem;
+      font-weight: bold;
+      color: white;
+      letter-spacing: 2px;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ffeb3b;
+    }
+
+    .playlist-section {
+      padding: 40px;
+      background: rgba(0, 0, 0, 0.7);
+      border-radius: 15px;
+      max-width: 900px;
+      margin: 40px auto;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      text-align: center;
+    }
+
+    .playlist-section h2 {
+      color: #ff7e5f;
+      margin-bottom: 25px;
+      font-size: 2.5rem;
+      font-weight: bolder;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .playlist {
+      margin-bottom: 40px;
+    }
+
+    .playlist iframe {
+      border-radius: 15px;
+      width: 100%;
+      height: 352px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .playlist iframe:hover {
+      transform: scale(1.05);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.6);
+    }
+
+    footer {
+      background: linear-gradient(to right, #4b79a1, #283e51);
+      color: #ddd;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 50px;
+      font-size: 1rem;
+      border-top: 3px solid #fff;
+    }
+
+    footer a {
+      color: #ff7e5f;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #ffeb3b;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="image">
+
+
+    <div class="playlist-section">
+      <h2>All Playlists</h2>
+
+      <div class="playlist">
+        <h3 style="color: #ff7e5f;">My Playlists</h3>
+        <iframe src="https://open.spotify.com/embed/playlist/351xB84buefvwNucGojBlJ?utm_source=generator" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+      <div class="playlist">
+        <h3 style="color: #4fc3f7;">Lana Del Rey</h3>
+        <iframe src="https://open.spotify.com/embed/artist/00FQb4jTyendYWaN8pK0wa?utm_source=generator" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+
+      <div class="playlist">
+        <h3 style="color: #ffffff;">d4Vd</h3>
+        <iframe src="https://open.spotify.com/embed/artist/5y8tKLUfMvliMe8IKamR32?utm_source=generator" frameBorder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&#169; 2024 Iker Music | <a href="https://www.instagram.com/iminsigneark/" target="_blank">@iminsigneark</a></p>
+  </footer>
+</body>
+
+</html>
